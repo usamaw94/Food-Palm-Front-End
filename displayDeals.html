@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display deals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='shortcut icon' href='icons/logo.png' type='image/x-icon'>
+    <script src="js/jquery-3.1.1.js"></script>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+
+    <link href="css/filestyleBootstrap.css" rel="stylesheet">
+    <script src="js/filestyleBootstrap.js" type="text/javascript"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/displayDeals.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="mySidenav" class="sidenav">
+    <div class="logo-container">
+        <center>
+            <span><img src="images/logo3-white.png" class="brand-logo"></span>
+            <span><img src="icons/Multiply-50.png" class="close-btn"></span>
+        </center>
+    </div>
+    <a class="active" href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Categories</a>
+    <a href="#">Deals</a>
+    <a href="#">Branches</a>
+</div>
+
+<div class="main-style" id="main">
+    <div id="head" class="head-bar container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6 header-text">
+                <span class="btn-menu" onclick="openCloseNav()">&#9776;</span>
+                <span><a href="dasboard.html" class="navbar-heading"> Restaurant Admin Panel</a></span>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <ul class="head-right-content list-inline">
+                    <li><button id="showBranchRequest" title="Branch requests" type="button" class="btn btn-notify"><i class="fa fa-cutlery fa-1x"></i> <span class="badge">2</span></button></li>
+                    <li data-toggle="dropdown"><a>Pizza Hut <span><img class="img-circle restaurant-logo-img" src="images/pizzahut.jpg"></span></a></li>
+                    <ul class="dropdown-menu dropdown-menu-right profile-options">
+                        <li><a href="#"><i class="fa fa-info fa-fw"></i>&nbsp; View Profile</a></li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i>&nbsp; Sign Out</a></li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-7 col-md-5 col-sm-offset-6 col-sm-6 col-xs-12">
+                <div id="branchRequests" class="branch-requests-container">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="closeRequests" title="Close" class="close-requests">
+                                    <i class="fa fa-times"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li>
+                            <div class="branch-request container-fluid">
+                                <div class="row ">
+                                    <div class="branch-address col-md-8 col-sm-6">
+                                        Cantt, Lahore
+                                    </div>
+                                    <div class="view-details col-md-4 col-sm-6">
+                                        <button onclick="window.location.href='#'" class="btn btn-block btn-detail">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr class="seperator1">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="branch-request container-fluid">
+                                <div class="row ">
+                                    <div class="branch-address col-md-8 col-sm-6">
+                                        Cantt, Lahore
+                                    </div>
+                                    <div class="view-details col-md-4 col-sm-6">
+                                        <button onclick="window.location.href='#'" class="btn btn-block btn-detail">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr class="seperator1">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="branch-request container-fluid">
+                                <div class="row ">
+                                    <div class="branch-address col-md-8 col-sm-6">
+                                        Cantt, Lahore
+                                    </div>
+                                    <div class="view-details col-md-4 col-sm-6">
+                                        <button onclick="window.location.href='#'" class="btn btn-block btn-detail">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr class="seperator1">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="main-heading-container">
+                    <h3 class="main-heading">DEALS</h3>
+                    <hr class="seperator-blue">
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <form>
+                            <div class="col-md-12 search-bar-container">
+                                <div class="input-group input-group-lg">
+                                    <input type="text" id="searchBar" class="form-control" placeholder="Search food items">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-search" type="submit"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div id="searchFilters" class="col-md-12 search-filters">
+                                <div class="radio-inline radio-danger">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" value="id" checked>
+                                        By item id
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" value="fast">
+                                        Fast food
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" value="desi">
+                                        Desi
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" value="chineese">
+                                        Chineese
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" value="italian">
+                                        Italian
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="container-fluid deal-items">
+
+                    <h3>All deals</h3>
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <div class="deal-container">
+                                <img src="images/102.jpg" class="item-image">
+                                <p class="item-name">
+                                    Deal 1
+                                </p>
+                                <p class="item-id">
+                                    Deal ID : 1
+                                </p>
+                                <p class="category">Category : other</p>
+                                <p class="deal-description">Deal Description in deatail in deatail in deatail</p>
+                                <p class="price">Rs. <span class="new-price">300</span></p>
+                                <div class="button-container">
+                                    <button title="View Details" class="btn btn-item-details viewDetails" data-toggle="modal" data-itemName="Beef Burger" data-target="#dealDetails">
+                                        <i class="fa fa-eye fa-2x fa-fw"></i>
+                                    </button>
+                                    <button title="Delete item" class="btn btn-delete-deal" data-toggle="modal" data-itemId="1" data-target="#deleteDeal">
+                                        <i class="fa fa-trash-o fa-2x fa-fw"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="dealDetails" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content view-edit-details">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="modal-heading">
+                                    <i class="fa fa-eye"></i> View Deal
+                                </h4>
+                            </div>
+                        </div>
+                        <hr class="seperator-full">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="images/102.jpg" class="img-responsive">
+                                <button class="btn btn-block btn-edit-details" onclick="window.location.href='editDeal.html'"><i class="fa fa-edit"></i> Edit</button>
+                            </div>
+                            <div class="col-md-8">
+                                <table class="table table-responsive table-stripped">
+                                    <tr>
+                                        <td class="first-td">ID :</td>
+                                        <td class="first-td">1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Name :</td>
+                                        <td><p id="itemName"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Category:</td>
+                                        <td>Other</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Description:</td>
+                                        <td>description of all items in a deal</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Price:</td>
+                                        <td>500 Rs.</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteDeal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content delete-deal">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="modal-heading">
+                                    <i class="fa fa-trash-o"></i> Delete Item
+                                </h4>
+                            </div>
+                        </div>
+                        <hr class="seperator-full">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="modal-data">Are you sure you want to delete item having item Id : <span id="itemId"></span></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-offset-5 col-md-4">
+                                <button class="btn btn-block btn-danger" onclick="window.location.href='#'">
+                                    <i class="fa fa-check"></i> Yes
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-block btn-default" data-dismiss="modal">
+                                    <i class="fa fa-times"></i> No
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script src="js/template.js"></script>
+<script src="js/displayDeals.js"></script>
+</body>
+</html>

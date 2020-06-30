@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food items</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='shortcut icon' href='icons/logo.png' type='image/x-icon'>
+    <script src="js/jquery-3.1.1.js"></script>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+
+    <link href="css/filestyleBootstrap.css" rel="stylesheet">
+    <script src="js/filestyleBootstrap.js" type="text/javascript"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/foodItems.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="mySidenav" class="sidenav">
+    <div class="logo-container">
+        <center>
+            <span><img src="images/logo3-white.png" class="brand-logo"></span>
+            <span><img src="icons/Multiply-50.png" class="close-btn"></span>
+        </center>
+    </div>
+    <a class="active" href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Categories</a>
+    <a href="#">Deals</a>
+    <a href="#">Branches</a>
+</div>
+
+<div class="main-style" id="main">
+    <div id="head" class="head-bar container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6 header-text">
+                <span class="btn-menu" onclick="openCloseNav()">&#9776;</span>
+                <span><a href="dasboard.html" class="navbar-heading"> Restaurant Admin Panel</a></span>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <ul class="head-right-content list-inline">
+                    <li><button id="showBranchRequest" title="Branch requests" type="button" class="btn btn-notify"><i class="fa fa-cutlery fa-1x"></i> <span class="badge">2</span></button></li>
+                    <li data-toggle="dropdown"><a>Pizza Hut <span><img class="img-circle restaurant-logo-img" src="images/pizzahut.jpg"></span></a></li>
+                    <ul class="dropdown-menu dropdown-menu-right profile-options">
+                        <li><a href="#"><i class="fa fa-info fa-fw"></i>&nbsp; View Profile</a></li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i>&nbsp; Sign Out</a></li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-7 col-md-5 col-sm-offset-6 col-sm-6 col-xs-12">
+                <div id="branchRequests" class="branch-requests-container">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="closeRequests" title="Close" class="close-requests">
+                                    <i class="fa fa-times"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li>
+                            <div class="branch-request container-fluid">
+                                <div class="row ">
+                                    <div class="branch-address col-md-8 col-sm-6">
+                                        Cantt, Lahore
+                                    </div>
+                                    <div class="view-details col-md-4 col-sm-6">
+                                        <button onclick="window.location.href='#'" class="btn btn-block btn-detail">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr class="seperator1">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="branch-request container-fluid">
+                                <div class="row ">
+                                    <div class="branch-address col-md-8 col-sm-6">
+                                        Cantt, Lahore
+                                    </div>
+                                    <div class="view-details col-md-4 col-sm-6">
+                                        <button onclick="window.location.href='#'" class="btn btn-block btn-detail">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr class="seperator1">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="branch-request container-fluid">
+                                <div class="row ">
+                                    <div class="branch-address col-md-8 col-sm-6">
+                                        Cantt, Lahore
+                                    </div>
+                                    <div class="view-details col-md-4 col-sm-6">
+                                        <button onclick="window.location.href='#'" class="btn btn-block btn-detail">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr class="seperator1">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="main-heading-container">
+                    <h3 class="main-heading">FOOD ITEMS</h3>
+                    <hr class="seperator-red">
+                </div>
+                <div class="container-fluid search-items">
+                    <div class="row">
+                        <form>
+                            <div class="col-md-12 search-bar-container">
+                                <div class="input-group input-group-lg">
+                                    <input type="text" id="searchBar" class="form-control" placeholder="Search food items">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-search" type="submit"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div id="searchFilters" class="col-md-12 search-filters">
+                                <div class="radio-inline radio-danger">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" value="id" checked>
+                                        By item id
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" value="fast">
+                                        Fast food
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" value="desi">
+                                        Desi
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" value="chineese">
+                                        Chineese
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" value="italian">
+                                        Italian
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="productPanelTrigger" class="add-new-product">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="panel-heading col-md-10 col-sm-10 col-xs-10">
+                                <p>Add new Product</p>
+                            </div>
+                            <div class="panel-indicator col-md-2 col-sm-2 col-xs-2">
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="addProductPanel" class="add-new-product-panel">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-offset-1 col-md-10">
+                                    <p class="label feild-label">Item Name</p>
+                                    <input type="text" name="itemName" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-offset-1 col-md-10">
+                                    <p class="label feild-label">Description</p>
+                                    <textarea type="text" name="description" rows="3" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-offset-1 col-md-10">
+                                    <p class="label feild-label">Image</p>
+                                    <div class="input-group image-preview">
+                                        <input name="logo" type="text" placeholder="Upload resturant logo image" class="form-control image-preview-filename" readonly> <!-- don't give a name === doesn't send on POST/GET -->
+                                        <div class="input-group-btn">
+                                            <!-- image-preview-clear button -->
+                                            <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                <span class="glyphicon glyphicon-remove"></span> Clear
+                                            </button>
+                                            <!-- image-preview-input -->
+                                            <div class="btn btn-default image-preview-input">
+                                                <i class="fa fa-upload" aria-hidden="true"></i>
+                                                <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-offset-1 col-md-10">
+                                    <p class="label feild-label">Category</p>
+                                    <select style="width: 100%" name="category" class="form-control">
+                                        <option value="pizzahut" >Fast Food</option>
+                                        <option value="optp" >Desi</option>
+                                        <option value="hardees" >Chineese</option>
+                                        <option value="FriChicks" >Italian</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-offset-1 col-md-10">
+                                    <p class="label feild-label">Sub-Category</p>
+                                    <select style="width: 100%" name="subCategory" class="form-control">
+                                        <option value="pizzahut" >Pizza</option>
+                                        <option value="optp" >Burger</option>
+                                        <option value="hardees" >Shwarma</option>
+                                        <option value="FriChicks" >Roll</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-offset-1 col-md-10">
+                                    <p class="label feild-label">Price</p>
+                                    <input type="number" name="oldPrice" class="form-control" placeholder="Rs.">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-offset-1 col-md-10">
+                                    <p class="label feild-label">Discount %</p>
+                                    <input type="number" name="discount" class="form-control" min="0" max="100" value="0">
+                                </div>
+                            </div>
+
+                            <!--<div class="row">-->
+                                <!--<div class="col-md-offset-1 col-md-10">-->
+                                    <!--<div id="openComboPanel" class="btn btn-add-combo">-->
+                                        <!--+ Add Combos-->
+                                    <!--</div>-->
+                                    <!--<div id="comboPanel" class="combo-panel">-->
+                                        <!--<div class="container-fluid">-->
+                                            <!--<div class="row">-->
+                                                <!--<div class="col-md-12">-->
+                                                    <!--<div class="combo-details">-->
+                                                        <!--<div class="col-md-12 type-title">-->
+                                                            <!--<p class="label feild-label">Combo's item type</p>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="col-md-8">-->
+                                                            <!--<input type="text" name="discount" class="form-control" placeholder="e.g. drinks,fries,toppings etc.">-->
+                                                        <!--</div>-->
+                                                        <!--<div class="col-md-2">-->
+                                                            <!--<div class="checkbox-inline add-on-check">-->
+                                                                <!--<label>-->
+                                                                    <!--<input type="checkbox" name="optionsRadios" value="id">-->
+                                                                    <!--Add On-->
+                                                                <!--</label>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="col-md-2">-->
+                                                            <!--<div class="btn btn-block btn-add-details">-->
+                                                                <!--+ Add details-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="container-fluid">-->
+                                                            <!--<div class="row">-->
+                                                                <!--<div class="col-md-8">-->
+                                                                    <!--<input type="text" name="comboItemName" class="form-control" placeholder="Item name">-->
+                                                                <!--</div>-->
+                                                                <!--<div class="col-md-4">-->
+                                                                    <!--<input type="number" class="form-control" placeholder="Price (Rs.)">-->
+                                                                <!--</div>-->
+                                                            <!--</div>-->
+                                                            <!--<div class="row">-->
+                                                                <!--<div class="col-md-3">-->
+                                                                    <!--<div class="btn btn-block btn-add-item">-->
+                                                                        <!--+ Add more items-->
+                                                                    <!--</div>-->
+                                                                <!--</div>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+
+                            <div class="row">
+                                <div class="col-md-offset-8 col-md-3">
+                                    <button type="submit" class="btn btn-block btn-add-product"> <i class="fa fa-plus-square-o"></i> &nbsp;Add Product
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div class="container-fluid food-items-container">
+                    <div class="row">
+                        <div class="view-all-product" onclick="window.location.href='allFoodItems.html'">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="title col-md-8">
+                                        <p>View all items</p>
+                                    </div>
+                                    <div class="quantity col-md-4">
+                                        <p>30 items</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="food-by-category" id="foodCategoryTrigger">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="title col-md-8">
+                                        <p>Food items by category</p>
+                                    </div>
+                                    <div class="indicator col-md-4">
+                                        <p><i class="fa fa-plus-circle"></i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="food-by-category-panel" id="foodByCategoryPanel">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12 foods-category ">
+                                        <a href=""><p>
+                                            Fast Food
+                                        </p></a>
+                                    </div>
+                                    <div class="col-md-12 foods-category">
+                                        <a href=""><p>
+                                            Chineese Food
+                                        </p></a>
+                                    </div>
+                                    <div class="col-md-12 foods-category">
+                                        <a href=""><p>
+                                            Desi Food
+                                        </p></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--<div class="row">-->
+                        <!--<div class="col-md-2 food-category">-->
+                            <!--<a href="#">-->
+                                <!--<div class="">-->
+                                    <!--<p class="category-heading">Fast Food</p>-->
+                                    <!--<p class="category-details">10 items</p>-->
+                                <!--</div>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-2 food-category">-->
+                            <!--<a href="#">-->
+                                <!--<div class="">-->
+                                    <!--<p class="category-heading">Desi</p>-->
+                                    <!--<p class="category-details">8 items</p>-->
+                                <!--</div>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-2 food-category">-->
+                            <!--<a href="#">-->
+                                <!--<div class="">-->
+                                    <!--<p class="category-heading">Chineese</p>-->
+                                    <!--<p class="category-details">5 items</p>-->
+                                <!--</div>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-2 food-category">-->
+                            <!--<a href="#">-->
+                                <!--<div class="">-->
+                                    <!--<p class="category-heading">Chineese</p>-->
+                                    <!--<p class="category-details">5 items</p>-->
+                                <!--</div>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-2 food-category">-->
+                            <!--<a href="#">-->
+                                <!--<div class="">-->
+                                    <!--<p class="category-heading">Chineese</p>-->
+                                    <!--<p class="category-details">5 items</p>-->
+                                <!--</div>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-2 food-category food-cat-last">-->
+                            <!--<a href="#">-->
+                                <!--<div class="">-->
+                                    <!--<p class="category-heading">Italian</p>-->
+                                    <!--<p class="category-details">20 items</p>-->
+                                <!--</div>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+
+                <div class="container-fluid food-items">
+
+                    <h3>New items</h3>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="food-item-container">
+                                <img src="images/102.jpg" class="item-image">
+                                <p class="item-discount">
+                                -40%
+                                </p>
+                                <p class="item-name">
+                                Beef Burger
+                                </p>
+                                <p class="item-id">
+                                Item ID : 1
+                                </p>
+                                <p class="item-category">Burgers / Fast Food</p>
+                                <p class="price">Rs. <span class="old-price"><del>500</del></span> <span class="new-price">300</span></p>
+                                <div class="button-container">
+                                    <button title="View Details" class="btn btn-item-details viewDetails" data-toggle="modal" data-itemName="Beef Burger" data-target="#itemDetails">
+                                        <i class="fa fa-eye fa-2x fa-fw"></i>
+                                    </button>
+                                    <button title="Delete item" class="btn btn-delete-item" data-toggle="modal" data-itemId="1" data-target="#deleteItem">
+                                        <i class="fa fa-trash-o fa-2x fa-fw"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="food-item-container">
+                                <img src="images/sub.jpg" class="item-image">
+                                <p class="item-discount">
+                                    -40%
+                                </p>
+                                <p class="item-name">
+                                    Subway Burger
+                                </p>
+                                <p class="item-id">
+                                    Item ID : 2
+                                </p>
+                                <p class="item-category">Burgers / Fast Food</p>
+                                <p class="price">Rs. <span class="old-price"><del>500</del></span> <span class="new-price">300</span></p>
+                                <div class="button-container">
+                                    <button title="View Details" class="btn btn-item-details viewDetails" data-toggle="modal" data-itemName="Subway Burger" data-target="#itemDetails">
+                                        <i class="fa fa-eye fa-2x fa-fw"></i>
+                                    </button>
+                                    <button title="Delete item" class="btn btn-delete-item" data-toggle="modal" data-itemId="2" data-target="#deleteItem">
+                                        <i class="fa fa-trash-o fa-2x fa-fw"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="food-item-container">
+                                <img src="images/food2.png" class="item-image">
+                                <p class="item-discount">
+                                    -40%
+                                </p>
+                                <p class="item-name">
+                                    Beef Kabab
+                                </p>
+                                <p class="item-id">
+                                    Item ID : 3
+                                </p>
+                                <p class="item-category">B.B.Q. / Desi</p>
+                                <p class="price">Rs. <span class="old-price"><del>500</del></span> <span class="new-price">300</span></p>
+                                <div class="button-container">
+                                    <button title="View Details" class="btn btn-item-details viewDetails" data-toggle="modal" data-itemName="Beef Kabab" data-target="#itemDetails">
+                                        <i class="fa fa-eye fa-2x fa-fw"></i>
+                                    </button>
+                                    <button title="Delete item" class="btn btn-delete-item" data-toggle="modal" data-itemId="3" data-target="#deleteItem">
+                                        <i class="fa fa-trash-o fa-2x fa-fw"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="food-item-container">
+                                <img src="images/gall_pic1.jpg" class="item-image">
+                                <p class="item-discount">
+                                    -40%
+                                </p>
+                                <p class="item-name">
+                                    Chicken Tikka
+                                </p>
+                                <p class="item-id">
+                                    Item ID : 4
+                                </p>
+                                <p class="item-category">Pizzas / Fast Food</p>
+                                <p class="price">Rs. <span class="old-price"><del>500</del></span> <span class="new-price">300</span></p>
+                                <div class="button-container">
+                                    <button title="View Details" class="btn btn-item-details viewDetails" data-toggle="modal" data-itemName="Chicken Tikka" data-target="#itemDetails">
+                                        <i class="fa fa-eye fa-2x fa-fw"></i>
+                                    </button>
+                                    <button title="Delete item" class="btn btn-delete-item" data-toggle="modal" data-itemId="4" data-target="#deleteItem">
+                                        <i class="fa fa-trash-o fa-2x fa-fw"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="itemDetails" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content view-edit-details">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="modal-heading">
+                                    <i class="fa fa-eye"></i> View Item
+                                </h4>
+                            </div>
+                        </div>
+                        <hr class="seperator-full">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="images/102.jpg" class="img-responsive">
+                                <button class="btn btn-block btn-edit-details" onclick="window.location.href='editFoodItem.html'"><i class="fa fa-edit"></i> Edit</button>
+                            </div>
+                            <div class="col-md-8">
+                                <table class="table table-responsive table-stripped">
+                                    <tr>
+                                        <td style="border-top: none">ID :</td>
+                                        <td style="border-top: none">1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Name :</td>
+                                        <td><p id="itemName"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Category:</td>
+                                        <td>Fast Food</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sub Category:</td>
+                                        <td>Burgers</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Price:</td>
+                                        <td>500 Rs.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Discount:</td>
+                                        <td>40%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>New price:</td>
+                                        <td>300 Rs.</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteItem" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content delete-item">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="modal-heading">
+                                    <i class="fa fa-trash-o"></i> Delete Item
+                                </h4>
+                            </div>
+                        </div>
+                        <hr class="seperator-full">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="modal-data">Are you sure you want to delete item having item Id : <span id="itemId"></span></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-offset-5 col-md-4">
+                                <button class="btn btn-block btn-danger" onclick="window.location.href='#'">
+                                    <i class="fa fa-check"></i> Yes
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-block btn-default" data-dismiss="modal">
+                                    <i class="fa fa-times"></i> No
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script src="js/template.js"></script>
+<script src="js/foodItems.js"></script>
+</body>
+</html>

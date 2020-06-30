@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link href="css/filestyleBootstrap.css" rel="stylesheet">
+    <script src="js/filestyleBootstrap.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="select2-4.0.3/dist/css/select2.min.css" rel="stylesheet">
+    <script src="select2-4.0.3/dist/js/select2.min.js"></script>
+
+    <link href="css/login.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="registration-container col-md-offset-2 col-md-8">
+            <div class="container-fluid">
+                <div style="display: flex" class="row">
+                    <div class="register-content col-md-5 col-sm-5 col-xs-5">
+                        <h3 class="center">Food Palm</h3>
+                        <h4 class="center">Login For Resturants</h4>
+                        <hr class="seperator">
+                        <ul class="list-unstyled signup-option-list-container">
+                            <li class="signup-option-list"><a id="showRegisterResturant" class="active signup-option-link">
+                                    <span style="font-size: 13px" class="glyphicon glyphicon-menu-right"></span>&nbsp;&nbsp;&nbsp;As Resturant
+                            </a></li>
+                            <li class="signup-option-list"><a id="showRegisterBranch" class="signup-option-link">
+                                <span style="font-size: 13px" class="glyphicon glyphicon-menu-right"></span>&nbsp;&nbsp;&nbsp;As Branch</a></li>
+                        </ul>
+                        <h4 class="center">Or</h4>
+                        <button onclick="window.location.href=''" class="btn btn-block btn-signup">
+                            <i class="fa fa-arrow-right"></i>
+                            &nbsp;Sign Up
+                        </button>
+                    </div>
+                    <div class="register-form col-md-7 col-sm-7 col-xs-7">
+                        <div id="registerResturant" class="register-resturant">
+                            <h4 class="rigister-form-heading">Signup as Resturant</h4>
+                            <form action="" method="">
+
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-cutlery fa-lg fa-fw" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="text" placeholder="Resturant Name" class="form-control" aria-label="...">
+                                </div>
+
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="password" placeholder="Enter password" class="form-control" aria-label="...">
+                                </div>
+
+                                <button type="submit" class="btn btn-block login-btn">
+                                <i  class="fa fa-sign-in" aria-hidden="true"></i>
+                                    &nbsp;Login
+                                </button>
+                            </form>
+                        </div>
+
+
+                        <div id="registerBranch" class="register-branch">
+                            <h4 class="rigister-form-heading">Signup as Resturant Branch</h4>
+                            <form action="" method="">
+
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i style="font-size: 20px" class="fa fa-cutlery fa-fw" aria-hidden="true"></i>
+                                    </div>
+                                    <select style="width: 100%" name="city" class="signup-select form-control">
+                                        <option></option>
+                                        <option value="pizzahut" >Pizza Hut</option>
+                                        <option value="optp" >Optp</option>
+                                        <option value="hardees" >Hardees</option>
+                                        <option value="FriChicks" >Fri Chicks</option>
+                                    </select>
+                                </div>
+
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i style="font-size: 20px" class="fa fa-location-arrow fa-fw" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="text" placeholder="Enter Branch Code" class="form-control" aria-label="...">
+                                </div>
+
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i style="font-size: 20px" class="fa fa-lock fa-fw" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="password" placeholder="Enter password" class="form-control" aria-label="...">
+                                </div>
+
+
+                                <button type="submit" class="btn btn-block login-btn">
+                                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                    &nbsp;Login
+                                </button>
+                            </form>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".signup-select").select2({
+            placeholder: "Select Resturant"
+        });
+    });
+</script>
+<!--<script type="text/javascript">-->
+    <!--$.backstretch("images/bg%20pattern%20grey.png", {speed: 1000});-->
+<!--</script>-->
+<script src="js/login.js"></script>
+</body>
+</html>

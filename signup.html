@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery-3.1.1.js"></script>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="css/filestyleBootstrap.css" rel="stylesheet">
+    <script src="js/filestyleBootstrap.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="select2-4.0.3/dist/css/select2.min.css" rel="stylesheet">
+    <script src="select2-4.0.3/dist/js/select2.min.js"></script>
+
+    <link href="css/signup.css" rel="stylesheet">
+    <title></title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="signup-form-container col-md-offset-7 col-sm-offset-6 col-md-5 col-sm-6 col-xs-offset-0 col-xs-12">
+                <div class="signup-tabs-container">
+                    <ul class="list-inline signup-tabs">
+                        <li class="tab-item active" data-toggle="pill" href="#resturant">Sign Up as Resturant</li>
+                        <li class="tab-item" data-toggle="pill" href="#branch">Sign Up as Branch</li>
+                    </ul>
+                </div>
+
+                <div class="tab-content">
+                    <div id="resturant" class="tab-pane fade in active">
+                        <div class="signup-container container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <p class="signup-form-label">Resturant Name</p>
+                                            </div>
+                                            <input type="text" class="form-control" aria-label="...">
+                                        </div>
+
+                                        <div class="input-group image-preview">
+                                            <div class="input-group-addon">
+                                                <p class="signup-form-label">Resturant Logo</p>
+                                            </div>
+                                            <input type="text" placeholder="Upload resturant logo image" class="form-control image-preview-filename" readonly> <!-- don't give a name === doesn't send on POST/GET -->
+                                            <div class="input-group-btn">
+                                                <!-- image-preview-clear button -->
+                                                <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                    <span class="glyphicon glyphicon-remove"></span> Clear
+                                                </button>
+                                                <!-- image-preview-input -->
+                                                <div class="btn btn-default image-preview-input">
+                                                    <i class="fa fa-upload" aria-hidden="true"></i>
+                                                    <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <p class="signup-form-label">Description</p>
+                                            </div>
+                                            <textarea rows="2" class="form-control" aria-label="..."></textarea>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <p class="signup-form-label">Password</p>
+                                            </div>
+                                            <input type="password" class="form-control" aria-label="...">
+                                        </div>
+
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <p class="signup-form-label">Re-enter Password</p>
+                                            </div>
+                                            <input type="password" class="form-control" aria-label="...">
+                                        </div>
+
+                                        <button type="submit" class="btn btn-block btn-signup">
+                                            <i class="fa fa-arrow-right"></i>&nbsp; Sign Up
+                                        </button>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="branch" class="tab-pane fade">
+                        <div class="signup-container container-fluid">
+                            <div class="row">
+                                <form>
+                                    <div class="col-md-12">
+
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <p class="signup-form-label">Select Resturant</p>
+                                            </div>
+                                            <select id="select-resturant" style="width: 100%" name="city" class="form-control signup-select">
+                                                <option value="pizzahut" >Pizza Hut</option>
+                                                <option value="optp" >Optp</option>
+                                                <option value="hardees" >Hardees</option>
+                                                <option value="FriChicks" >Fri Chicks</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <p class="signup-form-label">City</p>
+                                            </div>
+                                            <input type="text" class="form-control" aria-label="...">
+                                        </div>
+
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <p class="signup-form-label">Area</p>
+                                            </div>
+                                            <input type="text" class="form-control" aria-label="...">
+                                        </div>
+
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <p class="signup-form-label">Complete Address</p>
+                                            </div>
+                                            <textarea rows="2" class="form-control" aria-label="..."></textarea>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <p class="signup-form-label">Latitude</p>
+                                            </div>
+                                            <input type="text" class="form-control" aria-label="...">
+                                        </div>
+
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <p class="signup-form-label">Longitude</p>
+                                            </div>
+                                            <input type="text" class="form-control" aria-label="...">
+                                        </div>
+
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <p class="signup-form-label">Password</p>
+                                            </div>
+                                            <input type="password" class="form-control" aria-label="...">
+                                        </div>
+
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <p class="signup-form-label">Re-enter Password</p>
+                                            </div>
+                                            <input type="password" class="form-control" aria-label="...">
+                                        </div>
+
+                                        <button type="submit" class="btn btn-block btn-signup">
+                                            <i class="fa fa-arrow-right"></i>&nbsp; Sign Up
+                                        </button>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="login-container container-fluid">-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-md-offset-2 col-md-3 seperator-container">-->
+                            <!--<hr class="seperator">-->
+                        <!--</div>-->
+                        <!--<div class="col-md-2 or-container">-->
+                            <!--<h4>OR</h4>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-3 seperator-container">-->
+                            <!--<hr class="seperator">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-md-12">-->
+                            <!--<button type="submit" class="btn btn-block btn-signup">-->
+                                <!--<i class="fa fa-arrow-right"></i>&nbsp; Login-->
+                            <!--</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+<script src="js/signup.js"></script>
+</body>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".signup-select").select2({
+            placeholder: "Select resturant to enter branch"
+        });
+    });
+</script>
+<script type="text/javascript">
+    $.backstretch("images/signupBackground.jpg", {speed: 1000});
+</script>
+</html>

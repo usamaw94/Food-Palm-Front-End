@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='shortcut icon' href='icons/logo.png' type='image/x-icon'>
+    <script src="js/jquery-3.1.1.js"></script>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/dashboard.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="mySidenav" class="sidenav">
+    <div class="logo-container">
+        <center>
+        <span><img src="images/logo3-white.png" class="brand-logo"></span>
+        <span><img src="icons/Multiply-50.png" class="close-btn"></span>
+        </center>
+    </div>
+    <a class="active" href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Categories</a>
+    <a href="#">Deals</a>
+    <a href="#">Branches</a>
+</div>
+
+<div class="main-style" id="main">
+    <div id="head" class="head-bar container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6 header-text">
+                <span class="btn-menu" onclick="openCloseNav()">&#9776;</span>
+                <span><a href="dasboard.html" class="navbar-heading"> Restaurant Admin Panel</a></span>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <ul class="head-right-content list-inline">
+                    <li><button id="showBranchRequest" title="Branch requests" type="button" class="btn btn-notify"><i class="fa fa-cutlery fa-1x"></i> <span class="badge">2</span></button></li>
+                    <li data-toggle="dropdown"><a>Pizza Hut <span><img class="img-circle restaurant-logo-img" src="images/pizzahut.jpg"></span></a></li>
+                    <ul class="dropdown-menu dropdown-menu-right profile-options">
+                        <li><a href="#"><i class="fa fa-info fa-fw"></i>&nbsp; View Profile</a></li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i>&nbsp; Sign Out</a></li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-7 col-md-5 col-sm-offset-6 col-sm-6 col-xs-12">
+                <div id="branchRequests" class="branch-requests-container">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="closeRequests" title="Close" class="close-requests">
+                                    <i class="fa fa-times"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li>
+                            <div class="branch-request container-fluid">
+                                <div class="row ">
+                                    <div class="branch-address col-md-8 col-sm-6">
+                                        Cantt, Lahore
+                                    </div>
+                                    <div class="view-details col-md-4 col-sm-6">
+                                        <button onclick="window.location.href='#'" class="btn btn-block btn-detail">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr class="seperator1">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="branch-request container-fluid">
+                                <div class="row ">
+                                    <div class="branch-address col-md-8 col-sm-6">
+                                        Cantt, Lahore
+                                    </div>
+                                    <div class="view-details col-md-4 col-sm-6">
+                                        <button onclick="window.location.href='#'" class="btn btn-block btn-detail">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr class="seperator1">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="branch-request container-fluid">
+                                <div class="row ">
+                                    <div class="branch-address col-md-8 col-sm-6">
+                                        Cantt, Lahore
+                                    </div>
+                                    <div class="view-details col-md-4 col-sm-6">
+                                        <button onclick="window.location.href='#'" class="btn btn-block btn-detail">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr class="seperator1">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content container-fluid">
+        <div class="options-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <a href="foodItems.html">
+                                    <div class="product">
+                                        <h2>Products</h2>
+                                        <h4>20 items</h4>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <a href="categories.html">
+                                    <div class="category">
+                                        <h2>Categories</h2>
+                                        <h4>10 items</h4>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <a href="deals.html">
+                                    <div class="deal">
+                                        <h2>Deals</h2>
+                                        <h4>15 items</h4>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <a href="#">
+                                    <div class="branches">
+                                        <h2>Branches</h2>
+                                        <h4>5 Branches</h4>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <!--<div class="col-md-6 col-sm-6">-->
+                                <!--<a href="#">-->
+                                    <!--<div class="deal">-->
+                                        <!--<h2>Deals</h2>-->
+                                        <!--<h4>15 items</h4>-->
+                                    <!--</div>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                            <!--<div class="col-md-6 col-sm-6">-->
+                                <!--<a href="#">-->
+                                    <!--<div class="branches">-->
+                                        <!--<h2>Branches</h2>-->
+                                        <!--<h4>5 Branches</h4>-->
+                                    <!--</div>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/template.js"></script>
+</body>
+</html> 
